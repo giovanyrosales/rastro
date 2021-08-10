@@ -45,7 +45,7 @@
               <div class="inner">
                 <h3></h3>
 
-                <p>Proyectos a la Fecha</p>
+                <p>Cartas de Venta registradas a la Fecha: 204</p>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-paper"></i>
@@ -56,34 +56,7 @@
 
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3></h3>
-
-                <p>Ejecutado</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-ios-briefcase"></i>
-              </div>
-              <a class="small-box-footer"><i class="icon ion-pie-graph"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3></h3>
-
-                <p>Ejecutado el presente mes</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-ios-paper"></i>
-              </div>
-              <a class="small-box-footer"><i class="icon ion-pie-graph"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+           
 
         </div>
         <!-- /.row -->

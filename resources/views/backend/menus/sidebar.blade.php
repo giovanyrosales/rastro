@@ -35,23 +35,23 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tasks"></i>
               <p>
-              Proyectos
+              Cartas de Venta
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <!--@hasrole('uaci')-->
               <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/crear_proyecto') }}" target="frameprincipal" class="nav-link">
+                <a style="margin-left: 15px;" href="{{ url('/admin/crear_venta') }}" target="frameprincipal" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Nuevo Proyecto</p>
+                  <p>Nueva Carta</p>
                 </a>
               </li>
              <!-- @endhasrole-->
               <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_proyectos') }}" target="frameprincipal" class="nav-link">
+                <a style="margin-left: 15px;" href="{{ url('/admin/load_ventas') }}" target="frameprincipal" class="nav-link">
                   <i class="far fa-list-alt nav-icon"></i>
-                  <p>Proyectos Registrados</p>
+                  <p>Cartas Registradas</p>
                 </a>
               </li>
               <!-- <li class="nav-item">
@@ -60,172 +60,6 @@
                   <p>Reformas de Apertura</p>
                 </a>
               </li> -->
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tasks"></i>
-              <p>
-              Cotizaciones
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            <!--@hasrole('uaci')-->
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_cotizaciones_pendientes') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Cotizacion Pendientes</p>
-                </a>
-              </li>
-            <!-- @endhasrole-->
-            <!--@hasrole('uaci|jefeuaci')-->
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_cotizaciones_procesadas') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Cotizacion Procesadas</p>
-                </a>
-              </li>
-            <!-- @endhasrole-->
-            <!--@hasrole('jefeuaci')-->
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/procesar_cotizaciones') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-file nav-icon"></i>
-                  <p>Procesar Cotizaciones</p>
-                </a>
-              </li>
-            <!-- @endhasrole-->
-              
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ url('/admin/load_orden') }}" target="frameprincipal" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-              Ordenes de Compra
-              </p>
-            </a>
-          </li>
-          <!-- <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-inbox"></i>
-              <p>
-              Cuentas Bols&oacute;n
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/bolsones') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-file nav-icon"></i>
-                  <p>Cuentas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/bolsones') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Movimientos</p>
-                </a>
-              </li>
-            </ul>
-          </li>-->
-          <!-- <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tasks"></i>
-              <p>
-              Planillas
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/newproyecto') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-file nav-icon"></i>
-                  <p>Nueva</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/proyectos') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Registradas</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-          <!--<li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tasks"></i>
-              <p>
-              Presupuesto
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/codificados') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Codificaciones</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-              Configuraciones
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_cuentas') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>C&oacute;digo Espec&iacute;f.</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_materiales') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>Cat&aacute;logo Materiales</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_linea') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>L&iacute;nea de Trabajo</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_fuentef') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>Fuente de Financ.</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_fuenter') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>Fuente de Recursos</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_areagestion') }}" target="frameprincipal" class="nav-link">
-                  <i class="fa fa-list nav-icon"></i>
-                  <p>&Aacute;rea de Gesti&oacute;n</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_proveedores') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Proveedores</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_admin') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Administadores</p>
-                </a>
-              </li>
             </ul>
           </li>
          
