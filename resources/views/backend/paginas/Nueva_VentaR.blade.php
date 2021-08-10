@@ -307,7 +307,7 @@
       formData.append('mes', mes);
       formData.append('ano', ano);
 
-      axios.post('/admin/add_venta', formData, {  
+      axios.post('add_venta', formData, {  
         })
         .then((response) => {	
           loadingOverlay().cancel(spinHandle); // cerrar loading            

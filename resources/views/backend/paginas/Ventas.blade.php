@@ -107,7 +107,7 @@ toastr.options.timeOut = 750;
 
 function anularVenta(id){
   spinHandle = loadingOverlay().activate(); 
-  axios.post('/admin/anular_venta',{
+  axios.post('anular_venta',{
     'id': id  
     
       })
