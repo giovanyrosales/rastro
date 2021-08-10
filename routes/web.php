@@ -37,24 +37,9 @@ Route::group(['middleware' => 'auth', 'auth.admin'], function () {
     
 
            //Generacion de PDFs
-           //pdf reforma_apertura
-           Route::get('admin/pdf_reforma_apertura/{id}', 'PdfController@pdf_reforma_apertura');
-           Route::get('pdf_rep_comprasal/{id}', 'PdfController@pdf_rep_comprasal');
-
-           //PDF Orden de Compra
-                //desde controlador
-           Route::get('admin/pdf_orden/{id}', 'OrdenController@pdf_orden');
-                //desde vista
-           Route::get('create-item1/{id}', [
-            'as' => 'pdf.orden.create', 
-            'uses' => 'OrdenController@pdf_orden'
-           ]);
-        
-
-           
            
 
-           //PDF Orden de Compra
+           //PDF Acta
             //desde controlador
             Route::get('admin/pdf_acta/{id}', 'ActaController@pdf_acta');
             //desde vista

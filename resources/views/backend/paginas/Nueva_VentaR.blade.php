@@ -251,7 +251,7 @@
   <script src="{{ asset('plugins/select2.min.js') }}" type="text/javascript"></script>
   <script>
 
-    // guardar proyecto
+    // guardar venta
     function guardarventa(){
 
     var correla = document.getElementById('correla').value;
@@ -307,7 +307,7 @@
       formData.append('mes', mes);
       formData.append('ano', ano);
 
-      axios.post('/admin/add_venta', formData, {  
+      axios.post('add_venta', formData, {  
         })
         .then((response) => {	
           loadingOverlay().cancel(spinHandle); // cerrar loading            

@@ -48,7 +48,7 @@
 				}
     </style>
 
-	
+<script type="text/javascript"> var url = "/admin/"; </script>
 </head>
   <body class="hold-transition sidebar-mini">
 
