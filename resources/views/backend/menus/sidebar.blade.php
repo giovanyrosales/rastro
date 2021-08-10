@@ -40,7 +40,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <!--@hasrole('uaci')-->
+              <!--@hasrole('admin')-->
               <li class="nav-item">
                 <a style="margin-left: 15px;" href="{{ url('/admin/crear_venta') }}" target="frameprincipal" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
@@ -54,12 +54,6 @@
                   <p>Cartas Registradas</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a style="margin-left: 15px;" href="{{ url('/admin/load_proyectos_aper') }}" target="frameprincipal" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
-                  <p>Reformas de Apertura</p>
-                </a>
-              </li> -->
             </ul>
           </li>
          

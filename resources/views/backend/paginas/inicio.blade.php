@@ -45,7 +45,7 @@
               <div class="inner">
                 <h3></h3>
 
-                <p>Cartas de Venta registradas a la Fecha: 204</p>
+                <p>Cartas de Venta registradas a la Fecha: </p>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-paper"></i>

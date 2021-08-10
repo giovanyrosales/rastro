@@ -251,7 +251,7 @@
   <script src="{{ asset('plugins/select2.min.js') }}" type="text/javascript"></script>
   <script>
 
-    // guardar proyecto
+    // guardar venta
     function guardarventa(){
 
     var correla = document.getElementById('correla').value;

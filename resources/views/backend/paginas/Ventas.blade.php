@@ -13,7 +13,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Proyectos Registrados</h1>
+              <h1>Rastro Municipal</h1>
             </div>
 
           </div>
@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="card card-secondary">
           <div class="card-header">
-            <h3 class="card-title">Proyectos</h3>
+            <h3 class="card-title">Registro de Cartas de Venta</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
