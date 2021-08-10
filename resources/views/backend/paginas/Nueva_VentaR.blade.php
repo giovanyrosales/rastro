@@ -22,7 +22,7 @@
   <section class="content">
     <div class="container-fluid">
       <form class="form-horizontal" id="form1">
-        <div class="card card-info">
+        <div class="card card-danger">
           <div class="card-header">
             <h3 class="card-title">Nueva Carta de Venta</h3>
               <div class="card-tools">
