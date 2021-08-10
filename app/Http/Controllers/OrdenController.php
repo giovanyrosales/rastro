@@ -16,6 +16,7 @@ use App\requisicion;
 use App\deta_requisicion;
 use App\proyecto;
 use App\orden;
+use App\acta;
 use Carbon\Carbon;
 use PDF;
 
@@ -44,6 +45,16 @@ class OrdenController extends Controller
         $ordenes = orden::all();
         foreach( $ordenes as $val ){
             $requerimiento = DB::table('requisicion')->where('id', $val->requisicion_id)->first();
+            $proyecto = DB::table('proyecto')->where('id', $requerimiento->proyecto_id)->first();
+            
+            $acta = acta::where('orden_id', '=', $val->id)->first();
+
+            if ($acta === null) {
+                $val->acta = 0;
+            }else{
+                $val->acta =  $acta->id;
+            }
+
             $proyecto = DB::table('proyecto')->where('id', $requerimiento->proyecto_id)->first();
             //metemos nuevas variables en el arreglo $regdetalle
             $val->proyecto_cod = $proyecto->codigo;

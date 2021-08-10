@@ -13,7 +13,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Cotizaciones Pendientes</h1>
+              <h1>Proyectos Registrados</h1>
             </div>
 
           </div>
@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="card card-secondary">
           <div class="card-header">
-            <h3 class="card-title">Cotizaciones Pendientes</h3>
+            <h3 class="card-title">Proyectos</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -39,33 +39,38 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>             
                 <tr>
-                  <th style="width: 5%;">C&oacute;digo</th>
-                  <th style="width: 15%;">Destino</th>
-                  <th style="width: 10%;">Fecha</th>    
-                  <th style="width: 20%;">Necesidad</th>                           
-                  <th style="width: 20%;">Proveedor</th>                            
-                  <th style="width: 10%;">Cod Proyecto</th>                        
-                  <th style="width: 20%;">Opciones</th>
-
+                  <th style="width: 5%;">N.</th>
+                  <th style="width: 27.5%;">Nombre Vendedor</th>
+                  <th style="width: 27.5%;">Nombre Comprador</th>
+                  <th style="width: 10%;">Total Venta</th>    
+                  <th style="width: 15%;">Fecha</th>                             
+                  <th style="width: 10%;"></th>    
                 </tr>
                 </thead>
                 <tbody>
-              @foreach($cotizaciones_pendientes as $datos)
-                <tr>
-                  <td >{{ $datos-> id }}</td>
-                  <td>{{ $datos-> destino }}</td>
-                  <td>{{ $datos-> fecha }}</td>
-                  <td>{{ $datos-> necesidad }}</td> 
-                  <td>{{ $datos-> proveedor_nombre }}</td> 
-                  <td>{{ $datos-> proyecto_cod }}</td>          
+              @foreach($ventas as $datos)
+                
+                <tr class="table-default">
+
+                
+                @if($datos->estado == 1)  
+                  <td>{{ $datos-> correla }}</td>
+                  <td>{{ $datos-> nombreV }}</td>
+                  <td>{{ $datos-> nombreC }}</td>
+                  <td>{{ $datos-> sumaV }}</td>
+                  <td>{{ $datos-> dia }} / {{ $datos-> mes }} / {{ $datos-> ano }}</td>          
                   <td>
-                  <a class="btn btn-warning btn-xs" href= "{{ url('/admin/ver_cotizacion/'.$datos->id ) }} "    target="frameprincipal">
-                  <i class="fa fa-eye" title="Editar"></i>&nbsp; Ver </a>
-                  <!--@hasrole('uaci')-->
-                    
-                  <!-- @endhasrole-->
+
+                  <button type="button" class="btn btn-info btn-xs" onclick="imprimirVenta({{ $datos->id }})">
+                    <i class="fas fa-print" title="Editar"></i>&nbsp; Imprimir
+                  </button>
+                  <button type="button" class="btn btn-danger btn-xs" onclick="anularVenta({{ $datos->id }})">
+                    <i class="fas fa-trash" title="Editar"></i>&nbsp; Eliminar
+                  </button>
                   </td>                    
                 </tr>
+                @endif
+
               @endforeach  
                 </tbody>            
               </table>
@@ -74,8 +79,9 @@
           </div>
        </div>
       </div>
-  </section>
-  
+    </section>
+
+
 @extends('backend.menus.indexInferior')
 
 @section('content-admin-js')	
@@ -90,16 +96,43 @@
 
   <script>
 //*********************** Para darle tiempo al toaster al recargar la pagina */
-    toastr.options.timeOut = 750;
+toastr.options.timeOut = 750;
     toastr.options.fadeOut = 750;
     toastr.options.onHidden = function(){
       // this will be executed after fadeout, i.e. 2secs after notification has been show
      window.location.reload();
     }; 
 //************************************************************************** */
-   
+
+
+function anularVenta(id){
+  spinHandle = loadingOverlay().activate(); 
+  axios.post('/admin/anular_venta',{
+    'id': id  
+    
+      })
+      .then((response) => {	
+        loadingOverlay().cancel(spinHandle); // cerrar loading
+
+        if(response.data.success == 1){
+          toastr.success('Venta Anulada!')
+        }else{
+          toastr.error('Error', 'No se pudo anular la Venta');  
+        }           
+      })
+      .catch((error) => {
+        loadingOverlay().cancel(spinHandle); // cerrar loading   
+        toastr.error('Error');               
+  });
+}
+
+function imprimirVenta(valor){
+    console.log(valor);
+    window.open("{{ URL::to('admin/pdf_venta') }}/" + valor);
+}
+
 //Script para Organizar la tabla de datos
-$(document).ready(function() {
+    $(document).ready(function() {
       $('#example2').DataTable({
         "paging": true,
         "lengthChange": true,
