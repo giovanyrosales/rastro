@@ -20,7 +20,7 @@ class CreateVentasTable extends Migration
             $table->string('nombreV')->nullable();
             $table->string('domiV')->nullable();
             $table->string('depaV')->nullable();
-            $table->decimal('sumaV', 10, 2)->nullable();
+            $table->string('sumaV')->nullable();
             $table->string('nombreC')->nullable();
             $table->string('domiC')->nullable();
             $table->string('depaC')->nullable();

@@ -44,16 +44,14 @@
                   <th style="width: 27.5%;">Nombre Comprador</th>
                   <th style="width: 10%;">Total Venta</th>    
                   <th style="width: 15%;">Fecha</th>                             
-                  <th style="width: 10%;"></th>    
+                  <th style="width: 10%;">Opciones</th>    
                 </tr>
                 </thead>
                 <tbody>
               @foreach($ventas as $datos)
                 
-                <tr class="table-default">
-
-                
-                @if($datos->estado == 1)  
+                @if($datos->estado == 1) 
+				<tr class="table-default">					
                   <td>{{ $datos-> correla }}</td>
                   <td>{{ $datos-> nombreV }}</td>
                   <td>{{ $datos-> nombreC }}</td>
@@ -67,10 +65,10 @@
                   <button type="button" class="btn btn-danger btn-xs" onclick="anularVenta({{ $datos->id }})">
                     <i class="fas fa-trash" title="Editar"></i>&nbsp; Eliminar
                   </button>
-                  </td>                    
-                </tr>
+                  </td>     
+				</tr>				  
                 @endif
-
+				
               @endforeach  
                 </tbody>            
               </table>

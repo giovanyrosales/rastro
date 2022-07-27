@@ -120,13 +120,13 @@
               <div class="col-md-2">
                 <div class="form-group">
                   <label>el o</label>
-                  <input type="text" name="elo" id="elo" required placeholder="" class="form-control" value="">
+                  <input type="text" name="elo" id="elo"  placeholder="" class="form-control" value="">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label>Semoviente</label>
-                  <input type="text" name="semo" id="semo" required placeholder="Semoviente" class="form-control" value="">
+                  <input type="text" name="semo" id="semo"  placeholder="Semoviente" class="form-control" value="">
                 </div>
               </div>
             </div>
@@ -134,13 +134,13 @@
               <div class="col-md-3">
                 <div class="form-group">
                   <label>Expresado</label>
-                  <input type="text" name="expre" id="expre" required placeholder="Expresado" class="form-control" >
+                  <input type="text" name="expre" id="expre"  placeholder="Expresado" class="form-control" >
                 </div>
               </div>
               <div class="col-md-9">
                 <div class="form-group">
                   <label>A continuacion:</label>
-                  <input type="text" name="conti" id="conti" required class="form-control" value="">
+                  <input type="text" name="conti" id="conti"  class="form-control" value="">
                 </div>
               </div>
             </div>
@@ -148,25 +148,25 @@
               <div class="col-md-2">
                 <div class="form-group">
                   <label>Semoviente</label>
-                  <input type="text" name="semo2" id="semo2" required placeholder="Semoviente" class="form-control">
+                  <input type="text" name="semo2" id="semo2" placeholder="Semoviente" class="form-control">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label>Herrado</label>
-                  <input type="text" name="herrado" id="herrado" required placeholder="Herrado" class="form-control">
+                  <input type="text" name="herrado" id="herrado" placeholder="Herrado" class="form-control">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label>Venteado</label>
-                  <input type="text" name="vent" id="vent" required placeholder="Venteado" class="form-control">
+                  <input type="text" name="vent" id="vent" placeholder="Venteado" class="form-control">
                 </div>
               </div>
               <div class="col-md-3  ">
                 <div class="form-group">
                   <label>Fierro</label>
-                  <input type="text" name="fierro" id="fierro" required placeholder="Fecha de fierro" class="form-control">
+                  <input type="text" name="fierro" id="fierro"  placeholder="Fecha de fierro" class="form-control">
                 </div>
               </div>
               <div class="col-md-3  ">
