@@ -166,10 +166,10 @@ body {
 </tr>
 </tbody>
 </table>
-<table style="height: 5px; width: 749.117px;" border="0" cellspacing="0">
+<table style="height: 5px; width: 749.117px; margin-top: 15px" border="0" cellspacing="0">
 <tbody>
 <tr>
-<td style="width: 120px;">&nbsp;</td>
+<td style="width: 120px;  margin-left: 8px;">&nbsp;</td>
 <td style="width: 271px; text-align: center;">{{ $venta->fierro }}</td>
 <td style="width: 250px; text-align: center;">{{ $venta->numF }}</td>
 </tr>
@@ -190,7 +190,7 @@ body {
 </tr>
 </tbody>
 </table>
-<table style="width: 723px;" border="0" cellspacing="0">
+<table style="width: 723px; margin-top: 22px" border="0" cellspacing="0">
 <tbody>
 <tr>
 <td style="width: 10px;">&nbsp;</td>
