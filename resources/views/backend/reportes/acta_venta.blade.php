@@ -19,7 +19,10 @@ input {
 }
 
 @page {
-    margin: 10mm 8mm;
+    margin-top: 10mm;
+    margin-right: 45mm;
+    margin-bottom: 10mm;
+    margin-left: 8mm;
 }
 /* Otros estilos CSS para tu documento */
 body {
@@ -143,15 +146,18 @@ body {
 <td style="width: 236px;">&nbsp;</td>
 </tr>
 </tbody>
+
+
 </table>
-<table style="height: 70px; width: 760px;" border="0" cellspacing="0">
-<tbody>
-<tr>
-<td style="width: 155px; margin-top: 0; padding-top: 0;">&nbsp;</td>
-<td style="width: 490px; margin-top: 0; padding-top: 0;">{{ $venta->conti }}</td>
-</tr>
-</tbody>
+<table style="height: 70px;  width: 475px !important; margin-left: 220px;" border="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td style="width: 300px; margin-top: 0; padding-top: 0;">{{ $venta->conti }}</td>
+        </tr>
+    </tbody>
 </table>
+
+
 <table style="height: 35px; width: 669px; " border="0" cellspacing="0">
 <tbody>
 <tr>
