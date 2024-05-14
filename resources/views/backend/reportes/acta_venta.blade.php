@@ -3,8 +3,8 @@ input {
 	border-width:1px;  border:none;
 	}
 .ordenInput{
-	display: block;    
-} 
+	display: block;
+}
 .table-body{
 	width: 100%;
 }
@@ -12,21 +12,34 @@ input {
 	width: 100%;
 }
 .table-head td{
-	font-family:Arial, sans-serif; font-size:13px;
+	font-family:Arial, Arial, sans-serif; font-size:13px;
 }
 .table-body td{
-	font-family:Arial, sans-serif; font-size:13px;
+	font-family:Arial, Arial, sans-serif; font-size:13px;
+}
+
+@page {
+    margin: 10mm 8mm;
+}
+/* Otros estilos CSS para tu documento */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
 }
 
 </style>
-<table style="height: 10px;" width="716" cellspacing="0">
+
+<table style="height: 00px;" width="716" cellspacing="0">
 <tbody>
 <tr>
 <td style="width: 705.023px;">&nbsp;</td>
 </tr>
 </tbody>
 </table>
-<table style="height: 17px; width: 749.93px;" border="0" cellspacing="0">
+
+
+
+<table style="height: 17px; width: 749.93px; " border="0" cellspacing="0">
 <tbody>
 <tr>
 <td style="width: 364px;">&nbsp;</td>
@@ -34,6 +47,7 @@ input {
 </tr>
 </tbody>
 </table>
+
 <table style="height: 28px; width: 748.898px;" border="0" cellspacing="0">
 <tbody>
 <tr style="height: 20.9375px;">
@@ -42,6 +56,8 @@ input {
 </tr>
 </tbody>
 </table>
+
+
 <table border="0" cellspacing="0">
 <tbody>
 <tr>

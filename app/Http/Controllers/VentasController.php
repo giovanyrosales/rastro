@@ -113,6 +113,10 @@ class VentasController extends Controller
 
         $venta = DB::table('ventas')->where('id',  $request->id)->first();
         $pdf = PDF::loadView('backend.reportes.acta_venta', compact('venta'));
+
+
+
+
         $pdf->setPaper('letter', 'portrait')->setWarnings(false);
         return $pdf->stream('acta_venta.pdf');
         //return view('backend.reportes.acta_venta', compact('venta'));
