@@ -62,13 +62,14 @@
 
 	<script type="text/javascript">
 
-		// onkey Enter
-		var input = document.getElementById("password");
-			input.addEventListener("keyup", function(event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				login();
-			}
+
+        var input = document.getElementById("password");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                login();
+            }
+        });
 
 
 		function login() {
@@ -76,13 +77,20 @@
 			var usuario = document.getElementById('usuario').value;
 			var password = document.getElementById('password').value;
 
+            if(usuario === ''){
+                toastr.error('Usuario es requerido')
+                return
+            }
+
+            if(password === ''){
+                toastr.error('Contraseña es requerido')
+                return
+            }
+
 			let formData = new FormData();
 			formData.append('usuario', usuario);
 			formData.append('password', password);
 
-			var retorno = validaciones(usuario, password);
-
-			if (retorno) {
 
 				// desactivar btnLogin
 				document.getElementById("btnLogin").disabled = true;
@@ -101,7 +109,7 @@
 						document.getElementById("btnLogin").disabled = false;
 						alertify.error("Error...");
 					});
-			}
+
 		}
 
 		// mensajes para verificar respuesta
@@ -121,20 +129,6 @@
 			}
 		}
 
-		// validaciones frontend
-		function validaciones(usuario, password) {
-			if (usuario === '') {
-				alertify.error("El usuario es requerido...");
-				return false;
-			}
-			else if (password === '') {
-				alertify.error("La contraseña es requerida...");
-				return false;
-			}
-			else {
-				return true;
-			}
-		}
 
 
 
