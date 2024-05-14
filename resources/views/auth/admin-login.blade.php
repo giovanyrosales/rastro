@@ -87,8 +87,8 @@
 				// desactivar btnLogin
 				document.getElementById("btnLogin").disabled = true;
 
-				//axios.post('/webalcaldia.com/admin', formData, {
-					axios.post('/admin', formData, {
+				//axios.post('/rastro.com/admin', formData, {
+					axios.post('/rastro.com', formData, {
 				})
 					.then((response) => {
 						// activar btnLogin
