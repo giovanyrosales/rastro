@@ -41,7 +41,7 @@
               <div class="col-md-5">
                 <div class="form-group">
                   <label>Nombre Vendedor</label>
-                  <input type="text" name="nombreV" id="nombreV" class="form-control" required placeholder="Nombre del vendedor" value="">
+                  <input type="text" name="nombreV" id="nombreV" class="form-control"  placeholder="Nombre del vendedor" value="">
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
               <div class="col-md-5">
                 <div class="form-group">
                   <label>Domicilio del vendedor</label>
-                  <input type="text" name="domiV" id="domiV" class="form-control" required placeholder="Domicilio del vendedor" value="">
+                  <input type="text" name="domiV" id="domiV" class="form-control"  placeholder="Domicilio del vendedor" value="">
                 </div>
               </div>
               <div class="col-md-3">
@@ -76,7 +76,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Suma total</label>
-                  <input type="text" name="sumaV" id="sumaV" required placeholder="Suma total de venta" class="form-control" value="">
+                  <input type="text" name="sumaV" id="sumaV"  placeholder="Suma total de venta" class="form-control" value="">
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
               <div class="col-md-5">
                 <div class="form-group">
                   <label>Nombre Comprador</label>
-                  <input type="text" name="nombreC" id="nombreC" class="form-control" required placeholder="Nombre del comprador" value="">
+                  <input type="text" name="nombreC" id="nombreC" class="form-control"  placeholder="Nombre del comprador" value="">
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@
               <div class="col-md-5">
                 <div class="form-group">
                   <label>Domicilio del Comprador</label>
-                  <input type="text" name="domiC" id="domiC" class="form-control" required placeholder="Domicilio del comprador" value="">
+                  <input type="text" name="domiC" id="domiC" class="form-control"  placeholder="Domicilio del comprador" value="">
                 </div>
               </div>
               <div class="col-md-3">
@@ -125,7 +125,7 @@
               </div>
               <div class="col-md-2">
                 <div class="form-group">
-                  <label>Semoviente</label>
+                  <label>Semoviente (Opcional)</label>
                   <input type="text" name="semo" id="semo"  placeholder="Semoviente" class="form-control" value="">
                 </div>
               </div>
@@ -172,7 +172,7 @@
               <div class="col-md-3  ">
                 <div class="form-group">
                   <label>Num Fierro</label>
-                  <input type="number" name="numf" id="numF" required placeholder="Numero de fierro" class="form-control">
+                  <input type="number" name="numf" id="numF"  placeholder="Numero de fierro" class="form-control">
                 </div>
               </div>
             </div>
@@ -205,25 +205,25 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Alcaldia</label>
-                  <input type="text" name="alcal" id="alcal" required placeholder="Alcadia" class="form-control">
+                  <input type="text" name="alcal" id="alcal"  placeholder="Alcadia" value="Metapán" class="form-control">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label>DIA</label>
-                  <input type="number" name="dia" id="dia" minlength="2" required placeholder="Día certificado" class="form-control">
+                  <input type="number" name="dia" id="dia" minlength="2"  placeholder="Día certificado" class="form-control">
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label>MES</label>
-                  <input type="number" name="mes" id="mes" minlength="2" required placeholder="Mes certificado" class="form-control">
+                  <input type="number" name="mes" id="mes" minlength="2"  placeholder="Mes certificado" class="form-control">
                 </div>
               </div>
               <div class="col-md-2  ">
                 <div class="form-group">
                   <label>AÑO</label>
-                  <input type="number" name="ano" id="ano" minlength="4" required placeholder="Año certificado" class="form-control">
+                  <input type="number" name="ano" id="ano" minlength="4"  placeholder="Año certificado" class="form-control">
                 </div>
               </div>
             </div>
@@ -276,82 +276,6 @@
         var mes = document.getElementById('mes').value;
         var ano = document.getElementById('ano').value;
 
-        if(nombreV === ''){
-            toastr.error('Nombre vendedor es requerido')
-            return;
-        }
-
-        if(domiV === ''){
-            toastr.error('Domicilio vendedor es requerido')
-            return;
-        }
-
-        if(sumaV === ''){
-            toastr.error('Suma total es requerido')
-            return;
-        }
-
-        if(nombreC === ''){
-            toastr.error('Nombre comprador es requerido')
-            return;
-        }
-
-        if(domiC === ''){
-            toastr.error('Domicilio comprador es requerido')
-            return;
-        }
-
-        if(semo === ''){
-            toastr.error('Semoviente es requerido')
-            return;
-        }
-
-        if(conti === ''){
-            toastr.error('Continuación es requerido')
-            return;
-        }
-
-        if(herrado === ''){
-            toastr.error('Herrado es requerido')
-            return;
-        }
-
-        if(vent === ''){
-            toastr.error('Venteado es requerido')
-            return;
-        }
-
-        if(fierro === ''){
-            toastr.error('Fierro es requerido')
-            return;
-        }
-
-        if(numF === ''){
-            toastr.error('Num fierro es requerido')
-            return;
-        }
-
-        if(alcal === ''){
-            toastr.error('Alcadía es requerido')
-            return;
-        }
-
-
-        if(dia === ''){
-            toastr.error('Día es requerido')
-            return;
-        }
-
-        if(mes === ''){
-            toastr.error('Mes es requerido')
-            return;
-        }
-
-        if(ano === ''){
-            toastr.error('Año es requerido')
-            return;
-        }
-
 
         var spinHandle = loadingOverlay().activate(); // activar loading
 
@@ -382,36 +306,24 @@
       axios.post('add_venta', formData, {
         })
         .then((response) => {
-          loadingOverlay().cancel(spinHandle); // cerrar loading
-          //document.getElementById("btnGuardar").disabled = false; //habilitar boton
-          mensajeResponse(response);
+          loadingOverlay().cancel(spinHandle);
+
+            if(response.data.success == 1){
+
+                toastr.success('Guardado', 'Se ha guardado la nueva venta!');
+                document.getElementById("form1").reset();
+
+            }else{
+                toastr.error('Error');
+            }
+
         })
         .catch((error) => {
-          //document.getElementById("btnGuardar").disabled = false;
           loadingOverlay().cancel(spinHandle); // cerrar loading
-          toastr.error('Error', error.message);
+          toastr.error('Error');
       });
 
 }
-
-// mensaje cuando guardamos el proyecto
-function mensajeResponse(valor){
-  if(valor.data.success == 1){
-    //toastr.success('Guardado', valor.data.message);
-    toastr.success('Guardado', 'Se ha guardado la nueva venta!');
-    //Limpia el formulario y la tabla (tbody)
-    document.getElementById("form1").reset();
-    //$("#matriz > tbody").html("");
-  }else if(valor.data.success == 2){
-    toastr.error('Error', 'Datos no guardados!');
-  }else{
-    // error en validacion en servidor
-    //toastr.error('Error', 'Datos incorrectos!');
-    toastr.error('Error', valor.data.message);
-  }
-}
-
-
 
 
 //Select con buscardor (select2)

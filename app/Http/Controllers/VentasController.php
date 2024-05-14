@@ -49,31 +49,9 @@ class VentasController extends Controller
         return view('backend.paginas.Ventas',compact('ventas'));
      }
 
-    public function add_venta(Request $request){ 
-        if($request->isMethod('post')){  
-      
-           $regla = array( 
-               'nombreV' => 'required',           
-               'sumaV' => 'required'
-           );
-  
-           $mensaje = array(    
-               'nombreV.required' => 'nombre del vendedor es requerido',           
-               'sumaV.required' => 'suma de la venta es requerida'
-           
-               );
-  
-           $validar = Validator::make($request->all(), $regla, $mensaje );
-  
-           if ($validar->fails())
-           {
-               return [
-                   'success' => 0, 
-                   'message' => $validar->errors()->all()
-               ];
-           }   
+    public function add_venta(Request $request){
 
-            $idventa = venta::insertGetId([ 
+            $idventa = venta::insertGetId([
            'correla'=>$request->correla,
            'nombreV'=>$request->nombreV,
            'domiV'=>$request->domiV,
@@ -95,38 +73,32 @@ class VentasController extends Controller
            'alcal'=>$request->alcal,
            'dia'=>$request->dia,
            'mes'=>$request->mes,
-           'ano'=>$request->ano]); 
+           'ano'=>$request->ano,
+           'estado' => 1
 
-           if($idventa){     
-               $idventa = DB::getPdo()->lastInsertId();
-               }
-  
-           if($idventa){               
-               return [
-                   'success' => 1,
-                   'idventa' => $idventa// si
-               ];
-          }else{
-              return [
-                  'success' => 2 // no se
-              ];
-          }
-  
-       }
+            ]);
+
+           if($idventa){
+               return ['success' => 1];
+           }else{
+              return ['success' => 2];
+           }
+
+
     }
 
     // Anular venta
     public function anular_venta(Request $request){
 
-        if($request->isMethod('post')){  
+        if($request->isMethod('post')){
 
             // encontrar venta
-            if($orden = DB::table('ventas')->where('id', $request->id)->first()){                        
-                
+            if($orden = DB::table('ventas')->where('id', $request->id)->first()){
+
                     DB::table('ventas')->where('id', '=', $request->id)->update(['estado' => '2']);
                     return [
                         'success' => 1 // Venta Anulada
-                    ];                      
+                    ];
             }else{
                 return [
                     'success' => 3 // Venta no encontrada
@@ -135,10 +107,10 @@ class VentasController extends Controller
         }
     }
 
-    //pdf de Venta 
+    //pdf de Venta
     public function pdf_venta(Request $request)
     {
-        
+
         $venta = DB::table('ventas')->where('id',  $request->id)->first();
         $pdf = PDF::loadView('backend.reportes.acta_venta', compact('venta'));
         $pdf->setPaper('letter', 'portrait')->setWarnings(false);

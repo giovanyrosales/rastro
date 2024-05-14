@@ -36,13 +36,13 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input id="usuario" type="text" class="form-control" required placeholder="Usuario">
+						<input id="usuario" type="text" class="form-control"  placeholder="Usuario" autocomplete="off">
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input id="password" type="password" class="form-control" required placeholder="Contraseña">
+						<input id="password" type="password" class="form-control"  placeholder="Contraseña" autocomplete="off">
 					</div>
 					<br><br>
 					<div class="form-group text-center">
@@ -69,7 +69,7 @@
 				event.preventDefault();
 				login();
 			}
-		});
+
 
 		function login() {
 
@@ -88,7 +88,7 @@
 				document.getElementById("btnLogin").disabled = true;
 
 				//axios.post('/rastro.com/admin', formData, {
-					axios.post('/rastro.com', formData, {
+					axios.post('/rastro.com/admin', formData, {
 				})
 					.then((response) => {
 						// activar btnLogin
