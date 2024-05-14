@@ -62,11 +62,11 @@
 
 	<script type="text/javascript">
 
-		// onkey Enter 
-		var input = document.getElementById("password");	
-			input.addEventListener("keyup", function(event) {	
-			if (event.keyCode === 13) {			
-				event.preventDefault();			
+		// onkey Enter
+		var input = document.getElementById("password");
+			input.addEventListener("keyup", function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
 				login();
 			}
 		});
@@ -76,8 +76,6 @@
 			var usuario = document.getElementById('usuario').value;
 			var password = document.getElementById('password').value;
 
-
-			let me = this;
 			let formData = new FormData();
 			formData.append('usuario', usuario);
 			formData.append('password', password);
@@ -90,7 +88,7 @@
 				document.getElementById("btnLogin").disabled = true;
 
 				//axios.post('/webalcaldia.com/admin', formData, {
-					axios.post('/rastro/', formData, {
+					axios.post('/admin', formData, {
 				})
 					.then((response) => {
 						// activar btnLogin
@@ -124,7 +122,7 @@
 		}
 
 		// validaciones frontend
-		function validaciones(usuario, password) {			
+		function validaciones(usuario, password) {
 			if (usuario === '') {
 				alertify.error("El usuario es requerido...");
 				return false;

@@ -1,9 +1,9 @@
 @extends('backend.menus.indexSuperior')
- 
+
 @section('content-admin-css')
-    <link href="{{ asset('css/backend/adminlte3/adminlte.min.css') }}" type="text/css" rel="stylesheet" /> 
+    <link href="{{ asset('css/backend/adminlte3/adminlte.min.css') }}" type="text/css" rel="stylesheet" />
     <!-- data table -->
-    <link href="{{ asset('css/backend/adminlte3/dataTables.bootstrap4.css') }}" type="text/css" rel="stylesheet" /> 
+    <link href="{{ asset('css/backend/adminlte3/dataTables.bootstrap4.css') }}" type="text/css" rel="stylesheet" />
     <!-- mensaje toast -->
     <link href="{{ asset('plugins/toastr/toastr.min.css') }}" type="text/css" rel="stylesheet" />
 
@@ -34,8 +34,8 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="form-group">
-                  <label>Correlativo</label>
-                  <input type="number" name="correla" id="correla" class="form-control" required placeholder="correlativo" value="">
+                  <label>Correlativo (opcional)</label>
+                  <input type="number" name="correla" id="correla" class="form-control" placeholder="correlativo" value="">
                 </div>
               </div>
               <div class="col-md-5">
@@ -113,13 +113,13 @@
                     <option value="La Paz">La Paz</option>
                     <option value="Cabañas">Cabañas</option>
                     <option value="San Vicente">San Vicente</option>
-                    
+
                   </select>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
-                  <label>el o</label>
+                  <label>el o (opcional)</label>
                   <input type="text" name="elo" id="elo"  placeholder="" class="form-control" value="">
                 </div>
               </div>
@@ -133,7 +133,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="form-group">
-                  <label>Expresado</label>
+                  <label>Expresado (opcional)</label>
                   <input type="text" name="expre" id="expre"  placeholder="Expresado" class="form-control" >
                 </div>
               </div>
@@ -147,7 +147,7 @@
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group">
-                  <label>Semoviente</label>
+                  <label>Semoviente (opcional)</label>
                   <input type="text" name="semo2" id="semo2" placeholder="Semoviente" class="form-control">
                 </div>
               </div>
@@ -195,7 +195,7 @@
                     <option value="La Paz">La Paz</option>
                     <option value="Cabañas">Cabañas</option>
                     <option value="San Vicente">San Vicente</option>
-                    
+
                   </select>
                 </div>
               </div>
@@ -230,7 +230,6 @@
           </div>
           <div class="card-footer">
             <button id="btnguardar" type="button"  class="btn btn-info float-right" onclick="guardarventa();">Guardar</button>
-            <button type="button" onclick="location.href='{{ url('/admin/inicio') }}'" class="btn btn-default">Cancelar</button>
           </div>
         </div>
       </form>
@@ -239,14 +238,14 @@
 	<!-- /.section -->
 @extends('backend.menus.indexInferior')
 
-@section('content-admin-js')	
+@section('content-admin-js')
 
   <!-- data table -->
   <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
   <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.js') }}" type="text/javascript"></script>
   <script src="{{ asset('plugins/toastr/toastr.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('js/axios.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('plugins/loading/loadingOverlay.js') }}" type="text/javascript"></script> 
+  <script src="{{ asset('plugins/loading/loadingOverlay.js') }}" type="text/javascript"></script>
   <script src="{{ asset('plugins/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
   <script src="{{ asset('plugins/select2.min.js') }}" type="text/javascript"></script>
   <script>
@@ -254,72 +253,145 @@
     // guardar venta
     function guardarventa(){
 
-    var correla = document.getElementById('correla').value;
-    var nombreV = document.getElementById('nombreV').value;
-    var domiV = document.getElementById('domiV').value;
-    var depaV = document.getElementById('depaV').value;
-    var sumaV = document.getElementById('sumaV').value;
-    var nombreC = document.getElementById('nombreC').value;
-    var domiC = document.getElementById('domiC').value;
-    var depaC = document.getElementById('depaC').value;
-    var elo = document.getElementById('elo').value;
-    var semo = document.getElementById('semo').value;
-    var expre = document.getElementById('expre').value;
-    var conti = document.getElementById('conti').value; 
-    var semo2 = document.getElementById('semo2').value; 
-    var herrado = document.getElementById('herrado').value; 
-    var vent = document.getElementById('vent').value; 
-    var fierro = document.getElementById('fierro').value; 
-    var numF = document.getElementById('numF').value; 
-    var depaF = document.getElementById('depaF').value; 
-    var alcal = document.getElementById('alcal').value; 
-    var dia = document.getElementById('dia').value; 
-    var mes = document.getElementById('mes').value; 
-    var ano = document.getElementById('ano').value; 
+        var correla = document.getElementById('correla').value;
+        var nombreV = document.getElementById('nombreV').value;
+        var domiV = document.getElementById('domiV').value;
+        var depaV = document.getElementById('depaV').value;
+        var sumaV = document.getElementById('sumaV').value;
+        var nombreC = document.getElementById('nombreC').value;
+        var domiC = document.getElementById('domiC').value;
+        var depaC = document.getElementById('depaC').value;
+        var elo = document.getElementById('elo').value;
+        var semo = document.getElementById('semo').value;
+        var expre = document.getElementById('expre').value;
+        var conti = document.getElementById('conti').value;
+        var semo2 = document.getElementById('semo2').value;
+        var herrado = document.getElementById('herrado').value;
+        var vent = document.getElementById('vent').value;
+        var fierro = document.getElementById('fierro').value;
+        var numF = document.getElementById('numF').value;
+        var depaF = document.getElementById('depaF').value;
+        var alcal = document.getElementById('alcal').value;
+        var dia = document.getElementById('dia').value;
+        var mes = document.getElementById('mes').value;
+        var ano = document.getElementById('ano').value;
 
-    var retorno = validaciones(correla, nombreV, domiV, depaV, sumaV, nombreC, domiC, depaC, elo, semo, expre, conti, semo2, herrado, vent, fierro, numF, depaF, alcal, dia, mes, ano );
+        if(nombreV === ''){
+            toastr.error('Nombre vendedor es requerido')
+            return;
+        }
 
-    if(retorno){ 
-   
-      var spinHandle = loadingOverlay().activate(); // activar loading
-            
-      let formData = new FormData();
-      formData.append('correla', correla);
-      formData.append('nombreV', nombreV);
-      formData.append('domiV', domiV);
-      formData.append('depaV', depaV);
-      formData.append('sumaV', sumaV);
-      formData.append('nombreC', nombreC);
-      formData.append('domiC', domiC);
-      formData.append('depaC', depaC);
-      formData.append('elo', elo);
-      formData.append('semo', semo);
-      formData.append('expre', expre);
-      formData.append('conti', conti);
-      formData.append('semo2', semo2);
-      formData.append('herrado', herrado);
-      formData.append('vent', vent);
-      formData.append('fierro', fierro);
-      formData.append('numF', numF);
-      formData.append('depaF', depaF);
-      formData.append('alcal', alcal);
-      formData.append('dia', dia);
-      formData.append('mes', mes);
-      formData.append('ano', ano);
+        if(domiV === ''){
+            toastr.error('Domicilio vendedor es requerido')
+            return;
+        }
 
-      axios.post('add_venta', formData, {  
+        if(sumaV === ''){
+            toastr.error('Suma total es requerido')
+            return;
+        }
+
+        if(nombreC === ''){
+            toastr.error('Nombre comprador es requerido')
+            return;
+        }
+
+        if(domiC === ''){
+            toastr.error('Domicilio comprador es requerido')
+            return;
+        }
+
+        if(semo === ''){
+            toastr.error('Semoviente es requerido')
+            return;
+        }
+
+        if(conti === ''){
+            toastr.error('Continuación es requerido')
+            return;
+        }
+
+        if(herrado === ''){
+            toastr.error('Herrado es requerido')
+            return;
+        }
+
+        if(vent === ''){
+            toastr.error('Venteado es requerido')
+            return;
+        }
+
+        if(fierro === ''){
+            toastr.error('Fierro es requerido')
+            return;
+        }
+
+        if(numF === ''){
+            toastr.error('Num fierro es requerido')
+            return;
+        }
+
+        if(alcal === ''){
+            toastr.error('Alcadía es requerido')
+            return;
+        }
+
+
+        if(dia === ''){
+            toastr.error('Día es requerido')
+            return;
+        }
+
+        if(mes === ''){
+            toastr.error('Mes es requerido')
+            return;
+        }
+
+        if(ano === ''){
+            toastr.error('Año es requerido')
+            return;
+        }
+
+
+        var spinHandle = loadingOverlay().activate(); // activar loading
+
+          let formData = new FormData();
+          formData.append('correla', correla);
+          formData.append('nombreV', nombreV);
+          formData.append('domiV', domiV);
+          formData.append('depaV', depaV);
+          formData.append('sumaV', sumaV);
+          formData.append('nombreC', nombreC);
+          formData.append('domiC', domiC);
+          formData.append('depaC', depaC);
+          formData.append('elo', elo);
+          formData.append('semo', semo);
+          formData.append('expre', expre);
+          formData.append('conti', conti);
+          formData.append('semo2', semo2);
+          formData.append('herrado', herrado);
+          formData.append('vent', vent);
+          formData.append('fierro', fierro);
+          formData.append('numF', numF);
+          formData.append('depaF', depaF);
+          formData.append('alcal', alcal);
+          formData.append('dia', dia);
+          formData.append('mes', mes);
+          formData.append('ano', ano);
+
+      axios.post('add_venta', formData, {
         })
-        .then((response) => {	
-          loadingOverlay().cancel(spinHandle); // cerrar loading            
-          //document.getElementById("btnGuardar").disabled = false; //habilitar boton  
+        .then((response) => {
+          loadingOverlay().cancel(spinHandle); // cerrar loading
+          //document.getElementById("btnGuardar").disabled = false; //habilitar boton
           mensajeResponse(response);
         })
         .catch((error) => {
-          //document.getElementById("btnGuardar").disabled = false;     
-          loadingOverlay().cancel(spinHandle); // cerrar loading                
-          toastr.error('Error', error.message);               
-      }); 
-    } 
+          //document.getElementById("btnGuardar").disabled = false;
+          loadingOverlay().cancel(spinHandle); // cerrar loading
+          toastr.error('Error', error.message);
+      });
+
 }
 
 // mensaje cuando guardamos el proyecto
@@ -338,17 +410,7 @@ function mensajeResponse(valor){
     toastr.error('Error', valor.data.message);
   }
 }
-  
-  // validar antes de guardar el proyecto
-function validaciones(correla, nombreV, domiV, depaV, sumaV, nombreC, domiC, depaC, elo, semo, expre, conti, semo2, herrado, vent, fierro, numF, depaF, alcal, dia, mes, ano ){            
-     
-    if(correla === '' || nombreV === '' || domiV === '' || depaV === '' || sumaV === '' || nombreC === '' || domiC === '' || depaC === '' || elo === '' || semo === '' || expre === '' || conti === ''|| semo2 === '' || herrado === ''|| vent === '' || fierro === ''|| numF === '' || depaF === '' || alcal === '' || dia === '' || mes === '' || ano === '' ){
-      toastr.error('Error', 'Favor rellene todos los campos');
-      return false;
-    }
-    
-    return true; 
-}  
+
 
 
 

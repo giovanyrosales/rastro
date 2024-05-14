@@ -14,7 +14,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
-  
+
 
   <!-- Main content -->
   <div class="wrapper">
@@ -36,33 +36,7 @@
 
     <section class="content">
     <br><br>
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3></h3>
 
-                <p>Cartas de Venta registradas a la Fecha: </p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-ios-paper"></i>
-              </div>
-              <a class="small-box-footer"><i class="icon ion-pie-graph"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-           
-
-        </div>
-        <!-- /.row -->
-        <!-- /.content-wrapper -->
-      </div>
-    </section>
   </div>
 
 
